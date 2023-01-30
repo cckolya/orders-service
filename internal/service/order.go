@@ -63,7 +63,7 @@ func (o *Order) ListenAndServeMQ(ctx context.Context) error {
 				if err != nil {
 					o.log.Err(err).Send()
 				} else {
-					o.log.Info().Msg("invalid message was successful save")
+					o.log.Debug().Msg("invalid message was successful save")
 				}
 				continue
 			}
@@ -72,6 +72,7 @@ func (o *Order) ListenAndServeMQ(ctx context.Context) error {
 			if err != nil {
 				o.log.Err(err).Send()
 			}
+			o.log.Debug().Msg("valid message was successful save")
 			o.cache.Set(order.OrderUID, msg.Data, time.Minute)
 		}
 	}
