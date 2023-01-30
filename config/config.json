@@ -1,0 +1,19 @@
+{
+	"Postgres": {
+		"Host": "localhost",
+		"Port": "5432",
+		"User": "postgres",
+		"Password": "postgres",
+		"DBName": "postgres",
+		"SSLMode": "disable",
+		"Settings": {
+			"MaxOpenConns": 40,
+			"ConnMaxLifeTime": 60,
+			"MaxIdleConns": 20,
+			"MaxIdleLifeTime": 30
+		}
+	},
+	"Handler": {
+		"Url": "localhost:8080"
+	}
+}
