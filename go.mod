@@ -1,4 +1,4 @@
-module orders-service
+module github.com/cckolya/orders-service
 
 go 1.19
 
