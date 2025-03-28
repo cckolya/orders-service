@@ -1,9 +1,19 @@
-package pkg
+package main
 
-import "os"
+import (
+	"embed"
+	"fmt"
+)
+
+//go:embed data.txt
+var fs embed.FS
+
+func main() {
+	fmt.Println(ReadFile())
+}
 
 func ReadFile() (string, error) {
-	data, err := os.ReadFile("data.txt")
+	data, err := fs.ReadFile("data.txt")
 	if err != nil {
 		return "", err
 	}
